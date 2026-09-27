@@ -109,7 +109,17 @@ function resetViewerTransform() {
 }
 
 function setViewerScale(nextScale) {
-  viewerScale = clampViewerScale(nextScale);
+  const clampedScale = clampViewerScale(nextScale);
+  if (clampedScale === viewerScale) return;
+
+  // Keep the point at the center of the display fixed while zooming. Scaling
+  // the pan offset with the image prevents an off-center image from drifting
+  // farther out of view as it is zoomed back down.
+  const scaleRatio = clampedScale / viewerScale;
+  viewerOffsetX *= scaleRatio;
+  viewerOffsetY *= scaleRatio;
+  viewerScale = clampedScale;
+
   if (viewerScale === 1) {
     viewerOffsetX = 0;
     viewerOffsetY = 0;
@@ -182,6 +192,7 @@ function openViewer(image) {
   viewerImage.alt = image.alt || "Expanded image";
   resetViewerTransform();
   viewer.hidden = false;
+  document.documentElement.classList.add("image-viewer-open");
   document.body.classList.add("image-viewer-open");
   viewer.querySelector(".image-viewer-surface").focus({ preventScroll: true });
   viewer.requestFullscreen?.()?.catch(() => {});
@@ -191,6 +202,7 @@ function closeViewer() {
   if (!viewer || viewer.hidden) return;
   if (document.fullscreenElement) document.exitFullscreen?.()?.catch(() => {});
   viewer.hidden = true;
+  document.documentElement.classList.remove("image-viewer-open");
   document.body.classList.remove("image-viewer-open");
   viewerPointers.clear();
   viewerSource?.focus?.();

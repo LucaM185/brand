@@ -31,7 +31,11 @@ body {
   overflow-x: clip;
 }
 
-body.image-viewer-open { overflow: hidden; }
+html.image-viewer-open,
+body.image-viewer-open {
+  overflow: hidden;
+  background: #000;
+}
 
 img { max-width: 100%; display: block; }
 
@@ -611,6 +615,9 @@ a, button { touch-action: manipulation; }
 
 .image-viewer[hidden] { display: none; }
 .image-viewer::backdrop { background: #000; }
+.image-viewer::-webkit-backdrop { background: #000; }
+.image-viewer:fullscreen,
+.image-viewer:-webkit-full-screen { background: #000; }
 
 .image-viewer-surface {
   width: 100%;
