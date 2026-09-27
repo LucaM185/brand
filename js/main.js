@@ -76,14 +76,13 @@ document.querySelectorAll(".photo img").forEach((img) => {
   if (img.complete && img.naturalWidth === 0) fail();
 });
 
-// Open every supplied image in a touch-friendly viewer. The viewer stays inside
-// the page on iOS, and uses native fullscreen when the browser supports it.
+// Open every supplied image on a clean, edge-to-edge canvas. The browser and
+// device orientation determine the available space; no manual rotation UI is
+// needed. Pinch, drag, and wheel zoom remain available.
 const galleryImages = [...document.querySelectorAll(".photo img")];
 let viewer;
 let viewerImage;
-let viewerTitle;
 let viewerScale = 1;
-let viewerRotation = 0;
 let viewerOffsetX = 0;
 let viewerOffsetY = 0;
 let viewerSource;
@@ -99,12 +98,11 @@ function clampViewerScale(value) {
 function updateViewerTransform(animate = true) {
   if (!viewerImage) return;
   viewerImage.style.transition = animate ? "transform .16s ease" : "none";
-  viewerImage.style.transform = `translate3d(${viewerOffsetX}px, ${viewerOffsetY}px, 0) scale(${viewerScale}) rotate(${viewerRotation}deg)`;
+  viewerImage.style.transform = `translate3d(${viewerOffsetX}px, ${viewerOffsetY}px, 0) scale(${viewerScale})`;
 }
 
 function resetViewerTransform() {
   viewerScale = 1;
-  viewerRotation = 0;
   viewerOffsetX = 0;
   viewerOffsetY = 0;
   updateViewerTransform();
@@ -124,51 +122,23 @@ function createViewer() {
   root.className = "image-viewer";
   root.hidden = true;
   root.innerHTML = `
-    <div class="image-viewer-surface" role="dialog" aria-modal="true" aria-labelledby="image-viewer-title">
-      <div class="image-viewer-topbar">
-        <p id="image-viewer-title" class="image-viewer-title"></p>
-        <button class="image-viewer-button image-viewer-close" type="button" aria-label="Close image viewer">×</button>
-      </div>
+    <div class="image-viewer-surface" role="dialog" aria-modal="true" aria-label="Fullscreen image. Press Escape or tap to close." tabindex="-1">
       <div class="image-viewer-stage">
         <img class="image-viewer-image" alt="">
-      </div>
-      <div class="image-viewer-controls" aria-label="Image controls">
-        <button class="image-viewer-button" type="button" data-viewer-action="zoom-out" aria-label="Zoom out">−</button>
-        <button class="image-viewer-button image-viewer-reset" type="button" data-viewer-action="reset">Reset</button>
-        <button class="image-viewer-button" type="button" data-viewer-action="zoom-in" aria-label="Zoom in">+</button>
-        <button class="image-viewer-button" type="button" data-viewer-action="rotate" aria-label="Rotate image">↻ <span>Rotate</span></button>
-        <button class="image-viewer-button image-viewer-fullscreen" type="button" data-viewer-action="fullscreen">⛶ <span>Fullscreen</span></button>
       </div>
     </div>`;
   document.body.append(root);
   viewer = root;
   viewerImage = root.querySelector(".image-viewer-image");
-  viewerTitle = root.querySelector(".image-viewer-title");
-
-  root.querySelector(".image-viewer-close").addEventListener("click", closeViewer);
-  root.addEventListener("click", (event) => {
-    if (event.target === root) closeViewer();
-  });
-  root.querySelectorAll("[data-viewer-action]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const action = button.dataset.viewerAction;
-      if (action === "zoom-out") setViewerScale(viewerScale - 0.25);
-      if (action === "zoom-in") setViewerScale(viewerScale + 0.25);
-      if (action === "reset") resetViewerTransform();
-      if (action === "rotate") {
-        viewerRotation = (viewerRotation + 90) % 360;
-        updateViewerTransform();
-      }
-      if (action === "fullscreen") toggleViewerFullscreen();
-    });
-  });
 
   const stage = root.querySelector(".image-viewer-stage");
+  stage.addEventListener("click", (event) => {
+    if (event.target === stage || (event.target === viewerImage && viewerScale === 1)) closeViewer();
+  });
   stage.addEventListener("wheel", (event) => {
     event.preventDefault();
     setViewerScale(viewerScale + (event.deltaY < 0 ? 0.2 : -0.2));
   }, { passive: false });
-  stage.addEventListener("dblclick", () => setViewerScale(viewerScale > 1 ? 1 : 2));
   stage.addEventListener("pointerdown", (event) => {
     stage.setPointerCapture?.(event.pointerId);
     viewerPointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
@@ -210,27 +180,20 @@ function openViewer(image) {
   viewerSource = document.activeElement;
   viewerImage.src = image.currentSrc || image.src;
   viewerImage.alt = image.alt || "Expanded image";
-  viewerTitle.textContent = image.alt || "Image preview";
   resetViewerTransform();
   viewer.hidden = false;
   document.body.classList.add("image-viewer-open");
-  viewer.querySelector(".image-viewer-close").focus();
+  viewer.querySelector(".image-viewer-surface").focus({ preventScroll: true });
+  viewer.requestFullscreen?.()?.catch(() => {});
 }
 
 function closeViewer() {
   if (!viewer || viewer.hidden) return;
-  if (document.fullscreenElement) document.exitFullscreen?.();
+  if (document.fullscreenElement) document.exitFullscreen?.()?.catch(() => {});
   viewer.hidden = true;
   document.body.classList.remove("image-viewer-open");
   viewerPointers.clear();
   viewerSource?.focus?.();
-}
-
-function toggleViewerFullscreen() {
-  if (!viewer) return;
-  const surface = viewer.querySelector(".image-viewer-surface");
-  if (document.fullscreenElement) document.exitFullscreen?.();
-  else surface.requestFullscreen?.();
 }
 
 galleryImages.forEach((image) => {
