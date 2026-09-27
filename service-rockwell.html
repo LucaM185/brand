@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rockwell PLC workflows — Artificial Systems</title>
+  <meta name="description" content="Workflow optimization for Rockwell PLC projects: revisions, downloads, alarms, and the documents around the controller.">
+  <meta name="theme-color" content="#111820">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-name"><em>A</em>RTIFICIAL SYSTEMS</span>
+      <span class="logo-tag">Industrial workflows</span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="Primary">
+      <a class="nav-link" href="about.html" data-nav="about">About</a>
+      <div class="menu">
+        <a class="menu-label" href="services.html" data-nav="services" aria-current="page">Services</a>
+        <button class="menu-chev" type="button" aria-expanded="false" aria-controls="menu-services" aria-label="Open Services menu"></button>
+        <div class="menu-panel menu-panel--mega" id="menu-services">
+          <div class="menu-col menu-col--dark">
+            <p class="menu-col-title">On the floor</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="service-manufacturing.html" data-nav="service-manufacturing">
+                <span class="menu-item-title">Manufacturing workflows</span>
+                <span class="menu-item-note">Planning, the line, and quality</span>
+              </a>
+              <a class="menu-item" href="service-rockwell.html" data-nav="service-rockwell" aria-current="page">
+                <span class="menu-item-title">Rockwell PLC</span>
+                <span class="menu-item-note">The workflow around the controller</span>
+              </a>
+              <a class="menu-item" href="service-workflows.html" data-nav="service-workflows">
+                <span class="menu-item-title">Automatic workflows</span>
+                <span class="menu-item-note">A trigger, a rule, a visible failure</span>
+              </a>
+            </div>
+          </div>
+          <div class="menu-col menu-col--paper">
+            <p class="menu-col-title">Documents</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="service-documents.html" data-nav="service-documents">
+                <span class="menu-item-title">Document research</span>
+                <span class="menu-item-note">Word, Excel, Eplan, and email</span>
+              </a>
+              <a class="menu-item" href="service-docx.html" data-nav="service-docx">
+                <span class="menu-item-title">DOCX translation</span>
+                <span class="menu-item-note">Structure kept, glossary applied</span>
+              </a>
+            </div>
+          </div>
+          <div class="menu-col">
+            <p class="menu-col-title">Systems</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="service-local-ai.html" data-nav="service-local-ai">
+                <span class="menu-item-title">Local AI</span>
+                <span class="menu-item-note">Models that stay in the company</span>
+              </a>
+              <a class="menu-item" href="service-excel.html" data-nav="service-excel">
+                <span class="menu-item-title">Excel to applications</span>
+                <span class="menu-item-note">The workbook that became the system</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu">
+        <a class="menu-label" href="competencies.html" data-nav="competencies">Competencies</a>
+        <button class="menu-chev" type="button" aria-expanded="false" aria-controls="menu-competencies" aria-label="Open Competencies menu"></button>
+        <div class="menu-panel menu-panel--mega" id="menu-competencies">
+          <div class="menu-col menu-col--dark">
+            <p class="menu-col-title">Operations</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="competencies.html#operations">
+                <span class="menu-item-title">Manufacturing operations</span>
+                <span class="menu-item-note">Handoffs on the real process</span>
+              </a>
+              <a class="menu-item" href="competencies.html#controls">
+                <span class="menu-item-title">Rockwell control systems</span>
+                <span class="menu-item-note">Project hygiene and change control</span>
+              </a>
+              <a class="menu-item" href="competencies.html#automation">
+                <span class="menu-item-title">Workflow automation</span>
+                <span class="menu-item-note">Rules a supervisor can read</span>
+              </a>
+            </div>
+          </div>
+          <div class="menu-col menu-col--paper">
+            <p class="menu-col-title">Documents &amp; AI</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="competencies.html#documents">
+                <span class="menu-item-title">Technical documents</span>
+                <span class="menu-item-note">Word, Excel, Eplan, email</span>
+              </a>
+              <a class="menu-item" href="competencies.html#translation">
+                <span class="menu-item-title">DOCX translation</span>
+                <span class="menu-item-note">Glossary terms, original structure</span>
+              </a>
+              <a class="menu-item" href="competencies.html#local-ai">
+                <span class="menu-item-title">Local AI</span>
+                <span class="menu-item-note">On hardware you control</span>
+              </a>
+            </div>
+          </div>
+          <div class="menu-col">
+            <p class="menu-col-title">Engineering</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="competencies.html#applications">
+                <span class="menu-item-title">Application engineering</span>
+                <span class="menu-item-note">From workbook to software</span>
+              </a>
+              <a class="menu-item" href="competencies.html#avionics">
+                <span class="menu-item-title">Avionics displays</span>
+                <span class="menu-item-note">General aviation head-up displays</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu menu-end">
+        <a class="menu-label" href="projects.html" data-nav="projects">Projects</a>
+        <button class="menu-chev" type="button" aria-expanded="false" aria-controls="menu-projects" aria-label="Open Projects menu"></button>
+        <div class="menu-panel menu-panel--mega menu-panel--compact" id="menu-projects">
+          <div class="menu-col menu-col--dark">
+            <p class="menu-col-title">Overview</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="projects.html">
+                <span class="menu-item-title">All projects</span>
+                <span class="menu-item-note">Industrial work and avionics</span>
+              </a>
+            </div>
+          </div>
+          <div class="menu-col menu-col--paper">
+            <p class="menu-col-title">Avionics</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="project-avionics.html" data-nav="project-avionics">
+                <span class="menu-item-title">General aviation HUD</span>
+                <span class="menu-item-note">Head-up displays for light aircraft</span>
+              </a>
+            </div>
+          </div>
+          <div class="menu-col">
+            <p class="menu-col-title">More</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="project-other.html" data-nav="project-other">
+                <span class="menu-item-title">Other projects</span>
+                <span class="menu-item-note">Tools, studies, one-off software</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="nav-link" href="partners.html" data-nav="partners">Partners</a>
+      <a class="btn btn-solid nav-cta" href="contact.html" data-nav="contact"><span class="btn-chev" aria-hidden="true">›</span> Contact us</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-solid header-cta" href="contact.html" data-nav="contact"><span class="btn-chev" aria-hidden="true">›</span> Contact us</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <main id="content">
+    <section class="page-hero band-dark">
+  <div class="waves" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="services.html">Services</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Rockwell PLC</span>
+    </nav>
+    <h1>Workflow optimization for Rockwell PLC projects.</h1>
+    <p class="lede">A controller project is a workflow: who may change it, which revision is in the cabinet, and which document is supposed to describe it.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap stack">
+    <figure class="photo photo-wide">
+      <img src="images/studio-5000-l5x-automation.webp" alt="Studio 5000 L5X automation interface for a Rockwell project workflow" decoding="async">
+      <span class="photo-fallback">Rockwell PLC</span>
+    </figure>
+    <div class="block">
+      <p>We work on the path around Studio 5000 projects and the plant documents that travel with them. Safety-rated logic stays under your existing safety process. We do not bypass site access rules, and we do not download to a controller outside the change path you already require.</p>
+    </div>
+    <div class="block">
+      <h2>What we tighten</h2>
+      <ul class="clean-list">
+        <li><strong>Project hygiene</strong> Tasks, programs, tag names, and a revision note someone else can read six months later.</li>
+        <li><strong>The change path</strong> How a request becomes a reviewed edit, a download, and a record of what is now running.</li>
+        <li><strong>The words beside the logic</strong> Alarm text, HMI labels, and the checklist use the same names as the tags.</li>
+        <li><strong>FAT and SAT</strong> The test follows the project revision, not a checklist copied from the last machine.</li>
+        <li><strong>The surrounding files</strong> The Eplan page, the I/O sheet, and the mail that approved the change stay attached to that revision.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h2>How we work</h2>
+      <div class="steps">
+        <article class="step">
+          <p class="step-num">01</p>
+          <h3>Read the project</h3>
+          <p>Tasks, tags, revisions, and the documents that are supposed to match the controller.</p>
+        </article>
+        <article class="step">
+          <p class="step-num">02</p>
+          <h3>Fix the path</h3>
+          <p>How a change is asked for, reviewed, downloaded, and recorded.</p>
+        </article>
+        <article class="step">
+          <p class="step-num">03</p>
+          <h3>Align the words</h3>
+          <p>Alarm text, HMI labels, and the checklist use the same names as the logic.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band band-dark">
+  <div class="waves" aria-hidden="true"></div>
+  <div class="wrap cta-row">
+    <div>
+      <h2>Bring the revision that is actually running.</h2>
+      <p>We start from that project and the documents that claim to describe it.</p>
+    </div>
+    <a class="btn btn-solid" href="contact.html"><span class="btn-chev" aria-hidden="true">›</span> Contact us</a>
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="logo logo-light" href="index.html">
+        <span class="logo-name"><em>A</em>RTIFICIAL SYSTEMS</span>
+        <span class="logo-tag">Industrial workflows</span>
+      </a>
+      <p class="footer-blurb">Workflow optimization, document research, and local AI for industrial teams.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label">Company</p>
+      <a href="about.html">About</a>
+      <a href="competencies.html">Competencies</a>
+      <a href="partners.html">Partners</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label">Services</p>
+      <a href="service-manufacturing.html">Manufacturing</a>
+      <a href="service-documents.html">Document research</a>
+      <a href="service-docx.html">DOCX translation</a>
+      <a href="service-local-ai.html">Local AI</a>
+      <a href="service-rockwell.html">Rockwell PLC</a>
+      <a href="service-workflows.html">Automatic workflows</a>
+      <a href="service-excel.html">Excel to applications</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label">Projects</p>
+      <a href="projects.html">All projects</a>
+      <a href="project-avionics.html">General aviation HUD</a>
+      <a href="project-other.html">Other projects</a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© <span id="year"></span> Artificial Systems</span>
+    <a href="mailto:hello@artificialsystems.example">hello@artificialsystems.example</a>
+  </div>
+</footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

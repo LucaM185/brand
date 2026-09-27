@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automatic workflows — Artificial Systems</title>
+  <meta name="description" content="Automatic workflows with an explicit trigger, a rule people can read, and a log when something fails.">
+  <meta name="theme-color" content="#111820">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-name"><em>A</em>RTIFICIAL SYSTEMS</span>
+      <span class="logo-tag">Industrial workflows</span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="Primary">
+      <a class="nav-link" href="about.html" data-nav="about">About</a>
+      <div class="menu">
+        <a class="menu-label" href="services.html" data-nav="services" aria-current="page">Services</a>
+        <button class="menu-chev" type="button" aria-expanded="false" aria-controls="menu-services" aria-label="Open Services menu"></button>
+        <div class="menu-panel menu-panel--mega" id="menu-services">
+          <div class="menu-col menu-col--dark">
+            <p class="menu-col-title">On the floor</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="service-manufacturing.html" data-nav="service-manufacturing">
+                <span class="menu-item-title">Manufacturing workflows</span>
+                <span class="menu-item-note">Planning, the line, and quality</span>
+              </a>
+              <a class="menu-item" href="service-rockwell.html" data-nav="service-rockwell">
+                <span class="menu-item-title">Rockwell PLC</span>
+                <span class="menu-item-note">The workflow around the controller</span>
+              </a>
+              <a class="menu-item" href="service-workflows.html" data-nav="service-workflows" aria-current="page">
+                <span class="menu-item-title">Automatic workflows</span>
+                <span class="menu-item-note">A trigger, a rule, a visible failure</span>
+              </a>
+            </div>
+          </div>
+          <div class="menu-col menu-col--paper">
+            <p class="menu-col-title">Documents</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="service-documents.html" data-nav="service-documents">
+                <span class="menu-item-title">Document research</span>
+                <span class="menu-item-note">Word, Excel, Eplan, and email</span>
+              </a>
+              <a class="menu-item" href="service-docx.html" data-nav="service-docx">
+                <span class="menu-item-title">DOCX translation</span>
+                <span class="menu-item-note">Structure kept, glossary applied</span>
+              </a>
+            </div>
+          </div>
+          <div class="menu-col">
+            <p class="menu-col-title">Systems</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="service-local-ai.html" data-nav="service-local-ai">
+                <span class="menu-item-title">Local AI</span>
+                <span class="menu-item-note">Models that stay in the company</span>
+              </a>
+              <a class="menu-item" href="service-excel.html" data-nav="service-excel">
+                <span class="menu-item-title">Excel to applications</span>
+                <span class="menu-item-note">The workbook that became the system</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu">
+        <a class="menu-label" href="competencies.html" data-nav="competencies">Competencies</a>
+        <button class="menu-chev" type="button" aria-expanded="false" aria-controls="menu-competencies" aria-label="Open Competencies menu"></button>
+        <div class="menu-panel menu-panel--mega" id="menu-competencies">
+          <div class="menu-col menu-col--dark">
+            <p class="menu-col-title">Operations</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="competencies.html#operations">
+                <span class="menu-item-title">Manufacturing operations</span>
+                <span class="menu-item-note">Handoffs on the real process</span>
+              </a>
+              <a class="menu-item" href="competencies.html#controls">
+                <span class="menu-item-title">Rockwell control systems</span>
+                <span class="menu-item-note">Project hygiene and change control</span>
+              </a>
+              <a class="menu-item" href="competencies.html#automation">
+                <span class="menu-item-title">Workflow automation</span>
+                <span class="menu-item-note">Rules a supervisor can read</span>
+              </a>
+            </div>
+          </div>
+          <div class="menu-col menu-col--paper">
+            <p class="menu-col-title">Documents &amp; AI</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="competencies.html#documents">
+                <span class="menu-item-title">Technical documents</span>
+                <span class="menu-item-note">Word, Excel, Eplan, email</span>
+              </a>
+              <a class="menu-item" href="competencies.html#translation">
+                <span class="menu-item-title">DOCX translation</span>
+                <span class="menu-item-note">Glossary terms, original structure</span>
+              </a>
+              <a class="menu-item" href="competencies.html#local-ai">
+                <span class="menu-item-title">Local AI</span>
+                <span class="menu-item-note">On hardware you control</span>
+              </a>
+            </div>
+          </div>
+          <div class="menu-col">
+            <p class="menu-col-title">Engineering</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="competencies.html#applications">
+                <span class="menu-item-title">Application engineering</span>
+                <span class="menu-item-note">From workbook to software</span>
+              </a>
+              <a class="menu-item" href="competencies.html#avionics">
+                <span class="menu-item-title">Avionics displays</span>
+                <span class="menu-item-note">General aviation head-up displays</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu menu-end">
+        <a class="menu-label" href="projects.html" data-nav="projects">Projects</a>
+        <button class="menu-chev" type="button" aria-expanded="false" aria-controls="menu-projects" aria-label="Open Projects menu"></button>
+        <div class="menu-panel menu-panel--mega menu-panel--compact" id="menu-projects">
+          <div class="menu-col menu-col--dark">
+            <p class="menu-col-title">Overview</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="projects.html">
+                <span class="menu-item-title">All projects</span>
+                <span class="menu-item-note">Industrial work and avionics</span>
+              </a>
+            </div>
+          </div>
+          <div class="menu-col menu-col--paper">
+            <p class="menu-col-title">Avionics</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="project-avionics.html" data-nav="project-avionics">
+                <span class="menu-item-title">General aviation HUD</span>
+                <span class="menu-item-note">Head-up displays for light aircraft</span>
+              </a>
+            </div>
+          </div>
+          <div class="menu-col">
+            <p class="menu-col-title">More</p>
+            <div class="menu-col-links">
+              <a class="menu-item" href="project-other.html" data-nav="project-other">
+                <span class="menu-item-title">Other projects</span>
+                <span class="menu-item-note">Tools, studies, one-off software</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="nav-link" href="partners.html" data-nav="partners">Partners</a>
+      <a class="btn btn-solid nav-cta" href="contact.html" data-nav="contact"><span class="btn-chev" aria-hidden="true">›</span> Contact us</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-solid header-cta" href="contact.html" data-nav="contact"><span class="btn-chev" aria-hidden="true">›</span> Contact us</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <main id="content">
+    <section class="page-hero band-dark">
+  <div class="waves" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="services.html">Services</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Automatic workflows</span>
+    </nav>
+    <h1>Automatic workflows.</h1>
+    <p class="lede">A step that already has a clear trigger can run without someone remembering it. The rule stays readable, and a failure shows up in a log a supervisor can open.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap stack">
+    <figure class="photo photo-wide">
+      <img src="images/excel-approval-workflow.webp" alt="Automatic approval workflow with a visible Excel record" decoding="async">
+      <span class="photo-fallback">Workflows</span>
+    </figure>
+    <div class="block">
+      <h2>Examples of a trigger we will automate</h2>
+      <ul class="clean-list">
+        <li><strong>A released row</strong> A workbook row marked released opens the next task with the same identifiers.</li>
+        <li><strong>An approved change</strong> The request collects the Eplan page, the controller revision, and the mail thread that approved it.</li>
+        <li><strong>A finished checklist</strong> The completed list is filed against the job, and the people who need it are told.</li>
+        <li><strong>A missing file</strong> The workflow stops and says which file was missing. It does not skip the step.</li>
+      </ul>
+    </div>
+    <div class="pair">
+      <article class="panel">
+        <h2>Readable on purpose</h2>
+        <p>The rule is written so the person who owns the process can see what moves, who is told, and what “done” means. If they cannot explain it, it is not finished.</p>
+      </article>
+      <article class="panel">
+        <h2>Visible when it fails</h2>
+        <p>A silent skip is worse than the manual step it replaced. Failures stay on a log with the input that caused them.</p>
+      </article>
+    </div>
+    <div class="block">
+      <h2>How we work</h2>
+      <div class="steps">
+        <article class="step">
+          <p class="step-num">01</p>
+          <h3>Use a trigger you have</h3>
+          <p>A released row, an approved request, a finished checklist. Not a new status invented for the software.</p>
+        </article>
+        <article class="step">
+          <p class="step-num">02</p>
+          <h3>Write the rule in plain language</h3>
+          <p>What moves, who is told, and what happens when a file is missing.</p>
+        </article>
+        <article class="step">
+          <p class="step-num">03</p>
+          <h3>Run it where failures show</h3>
+          <p>A log a supervisor can read. No silent skip.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band band-dark">
+  <div class="waves" aria-hidden="true"></div>
+  <div class="wrap cta-row">
+    <div>
+      <h2>Automation after the path is named.</h2>
+      <p>If the handoff is still informal, we write that down before anything runs on its own.</p>
+    </div>
+    <a class="btn btn-solid" href="contact.html"><span class="btn-chev" aria-hidden="true">›</span> Contact us</a>
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="logo logo-light" href="index.html">
+        <span class="logo-name"><em>A</em>RTIFICIAL SYSTEMS</span>
+        <span class="logo-tag">Industrial workflows</span>
+      </a>
+      <p class="footer-blurb">Workflow optimization, document research, and local AI for industrial teams.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label">Company</p>
+      <a href="about.html">About</a>
+      <a href="competencies.html">Competencies</a>
+      <a href="partners.html">Partners</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label">Services</p>
+      <a href="service-manufacturing.html">Manufacturing</a>
+      <a href="service-documents.html">Document research</a>
+      <a href="service-docx.html">DOCX translation</a>
+      <a href="service-local-ai.html">Local AI</a>
+      <a href="service-rockwell.html">Rockwell PLC</a>
+      <a href="service-workflows.html">Automatic workflows</a>
+      <a href="service-excel.html">Excel to applications</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label">Projects</p>
+      <a href="projects.html">All projects</a>
+      <a href="project-avionics.html">General aviation HUD</a>
+      <a href="project-other.html">Other projects</a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <span>© <span id="year"></span> Artificial Systems</span>
+    <a href="mailto:hello@artificialsystems.example">hello@artificialsystems.example</a>
+  </div>
+</footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

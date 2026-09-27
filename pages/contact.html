@@ -1,0 +1,57 @@
+<section class="page-hero band-dark">
+  <div class="waves" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Contact</span>
+    </nav>
+    <h1>Contact</h1>
+    <p class="lede">Describe the workflow you want to change. Include the tools involved and who uses them.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+    <form class="contact-form" data-email="{{email}}" action="mailto:{{email}}" method="post" enctype="text/plain">
+      <label class="field">
+        <span>Name</span>
+        <input name="name" type="text" autocomplete="name" required>
+      </label>
+      <label class="field">
+        <span>Company</span>
+        <input name="company" type="text" autocomplete="organization">
+      </label>
+      <label class="field">
+        <span>Email</span>
+        <input name="email" type="email" autocomplete="email" required>
+      </label>
+      <label class="field">
+        <span>Topic</span>
+        <select name="topic" required>
+          <option value="">Select</option>
+          <option>Manufacturing workflows</option>
+          <option>Document research</option>
+          <option>DOCX translation</option>
+          <option>Local AI</option>
+          <option>Rockwell PLC</option>
+          <option>Automatic workflows</option>
+          <option>Excel to applications</option>
+          <option>General aviation HUD</option>
+          <option>Other projects</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>What should change</span>
+        <textarea name="message" required placeholder="The handoff, the files or controller involved, and who uses them today."></textarea>
+      </label>
+      <button class="btn btn-solid" type="submit"><span class="btn-chev" aria-hidden="true">›</span> Send message</button>
+      <p class="form-status" hidden></p>
+    </form>
+    <aside class="aside-card">
+      <h2>What to include</h2>
+      <p>The plant or the aircraft, the step that waits, and the tools already in use: Rockwell, Word, Excel, Eplan, email, or a workbook name.</p>
+      <p>Email <a href="mailto:{{email}}">{{email}}</a></p>
+    </aside>
+  </div>
+</section>
