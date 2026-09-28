@@ -16,13 +16,6 @@ const pages = [
     nav: "home",
   },
   {
-    file: "about.html",
-    title: "About — {{name}}",
-    description:
-      "An engineering practice for manufacturing workflows, industrial documents, local AI, and general aviation head-up displays.",
-    nav: "about",
-  },
-  {
     file: "services.html",
     title: "Services — {{name}}",
     description:
@@ -71,9 +64,9 @@ const pages = [
   },
   {
     file: "service-workflows.html",
-    title: "Automatic workflows — {{name}}",
+    title: "Document workflows — {{name}}",
     description:
-      "Automatic workflows with an explicit trigger, a rule people can read, and a log when something fails.",
+      "Custom app for Word, Excel, PDF, and Eplan: search the knowledge base, preview answers, and work with spreadsheets.",
     nav: "services",
     sub: "service-workflows",
   },
@@ -103,7 +96,7 @@ const pages = [
     file: "project-avionics.html",
     title: "General aviation head-up displays — {{name}}",
     description:
-      "Advanced avionics for general aviation head-up displays: symbology, readability, and installation in light aircraft.",
+      "Everything a pilot needs, in front of his eyes. Off-the-shelf electronics selected for the best user experience.",
     nav: "projects",
     sub: "project-avionics",
   },

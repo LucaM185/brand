@@ -18,7 +18,6 @@
       <span class="logo-tag">Industrial workflows</span>
     </a>
     <nav class="nav" id="site-nav" aria-label="Primary">
-      <a class="nav-link" href="about.html" data-nav="about">About</a>
       <div class="menu">
         <a class="menu-label" href="services.html" data-nav="services">Services</a>
         <button class="menu-chev" type="button" aria-expanded="false" aria-controls="menu-services" aria-label="Open Services menu"></button>
@@ -170,13 +169,7 @@
     <section class="hero band-dark">
   <div class="waves" aria-hidden="true"></div>
   <div class="hero-inner">
-    <p class="kicker hero-kicker">Industrial engineering + software</p>
-    <h1>Make every handoff explicit.</h1>
-    <p class="lede">We connect the plant, technical documents, Rockwell controls, and local AI—without replacing the people who know the work.</p>
-    <div class="hero-actions">
-      <a class="btn btn-solid" href="services.html"><span class="btn-chev" aria-hidden="true">›</span> Explore services</a>
-      <a class="btn btn-ghost" href="contact.html"><span class="btn-chev" aria-hidden="true">›</span> Discuss a workflow</a>
-    </div>
+    <h1>Reliability and speed start at process design</h1>
     <p class="hero-scope">Manufacturing · Rockwell PLC · Technical documents · On-premise AI</p>
   </div>
 </section>
@@ -186,64 +179,70 @@
     <div class="section-head section-head--compact">
       <p class="kicker">What we build</p>
       <h2 id="work-title">Systems you can inspect.</h2>
-      <p>One series of real interfaces and hardware, each connected to the engineering work behind it.</p>
     </div>
     <div class="cards work-grid">
-      <a class="card" href="service-docx.html">
+      <article class="card work-card" data-href="service-docx.html" tabindex="0" aria-expanded="false">
         <figure class="photo">
           <img src="images/technical-translation-review.webp" alt="Technical translation review with source and translated terms" loading="lazy" decoding="async">
         </figure>
         <div class="card-body">
           <span class="tag">01 · Documents</span>
-          <h3>Translations</h3>
-          <p>Translate technical Word files without losing headings, tables, numbering, or company terminology.</p>
-          <span class="more">See translations ›</span>
+          <h3>Translations preserving docx structure</h3>
         </div>
-      </a>
-      <a class="card" href="service-manufacturing.html">
+        <div class="card-expand" hidden>
+          <p>Translating big docx manuals is a tedious, expensive and error prone process. Translators often copy paste paragraphs to chatgpt and re-paste them back. This app does the copy pasting for you while maintaining the docx structure (tables, paragraphs…), 3000 times a document, for just a few euros per document online or locally if you want more privacy and you don’t mind a bigger upfront cost. You can have your company glossary and check the results with error detection systems.</p>
+          <p><strong>Note:</strong> numbers are based on real 100 page documents tested manually</p>
+        </div>
+      </article>
+      <article class="card work-card" data-href="service-workflows.html" tabindex="0" aria-expanded="false">
         <figure class="photo photo-interface">
-          <img src="images/manufacturing-workflows-dashboard.png" alt="Manufacturing workflow dashboard showing managed internal applications and their operating status" loading="lazy" decoding="async">
+          <img src="images/excel-approval-workflow.webp" alt="Custom app for company documents: Word, Excel, PDF, and Eplan" loading="lazy" decoding="async">
         </figure>
         <div class="card-body">
           <span class="tag">02 · Operations</span>
-          <h3>Workflows</h3>
-          <p>Make operational handoffs visible, controlled, and easy to run from one shared interface.</p>
-          <span class="more">See the workflow ›</span>
+          <h3>Custom app for documents (word, excel, pdf, eplan)</h3>
         </div>
-      </a>
-      <a class="card" href="project-avionics.html">
+        <div class="card-expand" hidden>
+          <p>Custom built webapp for repetitive interactions with the company knowledge base. What this means is question to paragraph of the best fitting document in a few seconds. With preview.</p>
+          <p>There is also wide support for excel file modification and analysis. And work in progress eplan parsing and search.</p>
+        </div>
+      </article>
+      <article class="card work-card" data-href="project-avionics.html" tabindex="0" aria-expanded="false">
         <figure class="photo">
           <img src="images/aviation-hud-prototype.webp" alt="General aviation head-up display prototype on a test bench" loading="lazy" decoding="async">
         </figure>
         <div class="card-body">
           <span class="tag">03 · Avionics</span>
-          <h3>Aviation</h3>
-          <p>Head-up display symbology, readability, installation, and testing for general aviation.</p>
-          <span class="more">See the project ›</span>
+          <h3>Everything a pilot needs, in front of his eyes. Custom built.</h3>
         </div>
-      </a>
-      <a class="card" href="service-rockwell.html">
+        <div class="card-expand" hidden>
+          <p>Off the shelf electronics carefully selected for the best user experience.</p>
+        </div>
+      </article>
+      <article class="card work-card" data-href="service-rockwell.html" tabindex="0" aria-expanded="false">
         <figure class="photo">
           <img src="images/studio-5000-l5x-automation.webp" alt="Studio 5000 L5X automation interface" loading="lazy" decoding="async">
         </figure>
         <div class="card-body">
           <span class="tag">04 · Controls</span>
           <h3>Controls &amp; automation</h3>
-          <p>Repeatable Rockwell revisions, downloads, alarms, triggers, and readable failure logs.</p>
-          <span class="more">See the controls work ›</span>
         </div>
-      </a>
-      <a class="card" href="service-local-ai.html">
+        <div class="card-expand" hidden>
+          <p>Workflow optimization for Rockwell PLC projects: revisions, downloads, alarms, and the documents around the controller.</p>
+        </div>
+      </article>
+      <article class="card work-card" data-href="service-local-ai.html" tabindex="0" aria-expanded="false">
         <figure class="photo">
           <img src="images/local-ai-vllm-platform.webp" alt="Local AI inference platform running on company-controlled hardware" loading="lazy" decoding="async">
         </figure>
         <div class="card-body">
           <span class="tag">05 · Local AI</span>
           <h3>Local AI systems</h3>
-          <p>Search, classification, and drafting on hardware your company controls.</p>
-          <span class="more">See local AI ›</span>
         </div>
-      </a>
+        <div class="card-expand" hidden>
+          <p>Local AI inside your company: models and document search that stay on hardware you control.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -253,36 +252,21 @@
     <div class="section-head section-head--compact">
       <p class="kicker">Method</p>
       <h2>How an engagement runs.</h2>
-      <p>Map the real path, change one high-value handoff, and stay through adoption.</p>
     </div>
     <div class="steps">
       <article class="step">
         <p class="step-num">01</p>
         <h3>Walk the work</h3>
-        <p>Follow one order, one change, or one document question from the first record to the last.</p>
       </article>
       <article class="step">
         <p class="step-num">02</p>
-        <h3>Name the path</h3>
-        <p>Include the unofficial sheet and the message that really released the job.</p>
+        <h3>Map the handoffs</h3>
       </article>
       <article class="step">
         <p class="step-num">03</p>
-        <h3>Change one handoff</h3>
-        <p>Adjust the sequence and the screen that holds it, and stay through the first weeks of use.</p>
+        <h3>Build and ship</h3>
       </article>
     </div>
-  </div>
-</section>
-
-<section class="cta-band band-dark">
-  <div class="waves" aria-hidden="true"></div>
-  <div class="wrap cta-row">
-    <div>
-      <h2>Tell us which handoff is slowing the plant down.</h2>
-      <p>Manufacturing, documents, a Rockwell project, a workbook, or a display. One description is enough to start.</p>
-    </div>
-    <a class="btn btn-solid" href="contact.html"><span class="btn-chev" aria-hidden="true">›</span> Contact us</a>
   </div>
 </section>
 
@@ -298,7 +282,6 @@
     </div>
     <div class="footer-col">
       <p class="footer-label">Company</p>
-      <a href="about.html">About</a>
       <a href="competencies.html">Competencies</a>
       <a href="partners.html">Partners</a>
       <a href="contact.html">Contact</a>

@@ -79,7 +79,49 @@ document.querySelectorAll(".photo img").forEach((img) => {
 // Open every supplied image on a clean, edge-to-edge canvas. The browser and
 // device orientation determine the available space; no manual rotation UI is
 // needed. Pinch, drag, and wheel zoom remain available.
-const galleryImages = [...document.querySelectorAll(".photo img")];
+const galleryImages = [...document.querySelectorAll(".photo img")].filter(
+  (img) => !img.closest("a") && !img.closest(".work-card")
+);
+
+const workCardMq = window.matchMedia("(max-width: 720px)");
+
+function setWorkCardOpen(card, open) {
+  const panel = card.querySelector(".card-expand");
+  if (!panel) return;
+  card.classList.toggle("is-open", open);
+  card.setAttribute("aria-expanded", String(open));
+  panel.hidden = !open;
+}
+
+function initWorkCards() {
+  const cards = [...document.querySelectorAll(".work-grid .work-card")];
+  if (!cards.length) return;
+
+  const closeAll = () => cards.forEach((card) => setWorkCardOpen(card, false));
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      if (workCardMq.matches) {
+        const willOpen = !card.classList.contains("is-open");
+        closeAll();
+        if (willOpen) setWorkCardOpen(card, true);
+        return;
+      }
+      const href = card.dataset.href;
+      if (href) window.location.assign(href);
+    });
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      card.click();
+    });
+  });
+
+  workCardMq.addEventListener("change", closeAll);
+}
+
+initWorkCards();
 let viewer;
 let viewerImage;
 let viewerScale = 1;
