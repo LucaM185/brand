@@ -18,7 +18,7 @@
       <span class="logo-tag">Industrial workflows</span>
     </a>
     <nav class="nav" id="site-nav" aria-label="Primary">
-      <div class="menu">
+      <div class="menu" hidden>
         <a class="menu-label" href="services.html" data-nav="services">Services</a>
         <button class="menu-chev" type="button" aria-expanded="false" aria-controls="menu-services" aria-label="Open Services menu"></button>
         <div class="menu-panel menu-panel--mega" id="menu-services">
@@ -67,7 +67,7 @@
           </div>
         </div>
       </div>
-      <div class="menu">
+      <div class="menu" hidden>
         <a class="menu-label" href="competencies.html" data-nav="competencies">Competencies</a>
         <button class="menu-chev" type="button" aria-expanded="false" aria-controls="menu-competencies" aria-label="Open Competencies menu"></button>
         <div class="menu-panel menu-panel--mega" id="menu-competencies">
@@ -120,7 +120,7 @@
           </div>
         </div>
       </div>
-      <div class="menu menu-end">
+      <div class="menu menu-end" hidden>
         <a class="menu-label" href="projects.html" data-nav="projects">Projects</a>
         <button class="menu-chev" type="button" aria-expanded="false" aria-controls="menu-projects" aria-label="Open Projects menu"></button>
         <div class="menu-panel menu-panel--mega menu-panel--compact" id="menu-projects">
@@ -153,7 +153,7 @@
           </div>
         </div>
       </div>
-      <a class="nav-link" href="partners.html" data-nav="partners">Partners</a>
+      <a class="nav-link" href="partners.html" data-nav="partners" hidden>Partners</a>
       <a class="btn btn-solid nav-cta" href="contact.html" data-nav="contact"><span class="btn-chev" aria-hidden="true">›</span> Contact us</a>
     </nav>
     <div class="header-actions">
@@ -203,8 +203,9 @@
           <img src="images/excel-approval-workflow.webp" alt="Custom app for company documents: Word, Excel, PDF, and Eplan" loading="lazy" decoding="async">
         </figure>
         <div class="card-expand">
-          <p>Custom built webapp for repetitive interactions with the company knowledge base. What this means is going from the question to the paragraph of the best fitting document in a few seconds. With preview.</p>
-          <p>There is also wide support for excel file modification and analysis. And work in progress eplan parsing and search.</p>
+          <p>Custom built webapp for repetitive interactions with the company knowledge base.</p>
+          <p>Research: What this means is going from the question to answer in seconds, with the links to the exact paragraphs of the documents used to give you the answer. With eplan parsing support.</p>
+          <p>Excels: wide support for file modification and analysis.</p>
         </div>
       </article>
       <article class="card work-card is-open" data-href="project-avionics.html" tabindex="0" aria-expanded="true">
@@ -219,9 +220,21 @@
           <p>GPS speed, heading, altitude and inertial attitude. Flight plans can be made from the app and they are instantly transferred by Bluetooth to the HUD device.</p>
         </div>
       </article>
+      <article class="card work-card is-open" data-href="service-excel.html" tabindex="0" aria-expanded="true">
+        <div class="card-body">
+          <span class="tag">04 · Excel</span>
+          <h3>Excel to webapp transformation</h3>
+        </div>
+        <figure class="photo photo-interface">
+          <img src="images/excel-approval-workflow.webp" alt="Excel workbook connected to an approval application" loading="lazy" decoding="async">
+        </figure>
+        <div class="card-expand">
+          <p>Transform Excel workbooks into applications.</p>
+        </div>
+      </article>
       <article class="card work-card is-open" data-href="service-rockwell.html" tabindex="0" aria-expanded="true">
         <div class="card-body">
-          <span class="tag">04 · Controls</span>
+          <span class="tag">05 · Controls</span>
           <h3>Controls &amp; automation</h3>
         </div>
         <figure class="photo">
@@ -233,7 +246,7 @@
       </article>
       <article class="card work-card is-open" data-href="service-local-ai.html" tabindex="0" aria-expanded="true">
         <div class="card-body">
-          <span class="tag">05 · Local AI</span>
+          <span class="tag">06 · Local AI</span>
           <h3>Local AI systems</h3>
         </div>
         <figure class="photo">

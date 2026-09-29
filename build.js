@@ -67,7 +67,7 @@ const pages = [
     file: "service-workflows.html",
     title: "Document workflows — {{name}}",
     description:
-      "Custom app for Word, Excel, PDF, and Eplan: search the knowledge base, preview answers, and work with spreadsheets.",
+      "Custom app for Word, Excel, PDF, and Eplan: answers from the knowledge base with links to the source paragraphs, Eplan parsing, and Excel modification and analysis.",
     nav: "services",
     sub: "service-workflows",
   },

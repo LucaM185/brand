@@ -164,6 +164,9 @@ a, button { touch-action: manipulation; }
   align-items: center;
 }
 
+.menu[hidden],
+.nav-link[hidden] { display: none; }
+
 .menu::after {
   content: "";
   position: absolute;
