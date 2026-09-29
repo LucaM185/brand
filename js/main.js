@@ -97,13 +97,13 @@ function initWorkCards() {
   const cards = [...document.querySelectorAll(".work-grid .work-card")];
   if (!cards.length) return;
 
-  const closeAll = () => cards.forEach((card) => setWorkCardOpen(card, false));
+  cards.forEach((card) => setWorkCardOpen(card, true));
 
   cards.forEach((card) => {
     card.addEventListener("click", () => {
       if (workCardMq.matches) {
         const willOpen = !card.classList.contains("is-open");
-        closeAll();
+        cards.forEach((other) => setWorkCardOpen(other, false));
         if (willOpen) setWorkCardOpen(card, true);
         return;
       }
@@ -117,8 +117,6 @@ function initWorkCards() {
       card.click();
     });
   });
-
-  workCardMq.addEventListener("change", closeAll);
 }
 
 initWorkCards();
@@ -174,7 +172,8 @@ function createViewer() {
   root.className = "image-viewer";
   root.hidden = true;
   root.innerHTML = `
-    <div class="image-viewer-surface" role="dialog" aria-modal="true" aria-label="Fullscreen image. Press Escape or tap to close." tabindex="-1">
+    <div class="image-viewer-surface" role="dialog" aria-modal="true" aria-label="Expanded image. Press Escape or tap Close to return." tabindex="-1">
+      <button type="button" class="image-viewer-close" aria-label="Close image">Close</button>
       <div class="image-viewer-stage">
         <img class="image-viewer-image" alt="">
       </div>
@@ -183,9 +182,16 @@ function createViewer() {
   viewer = root;
   viewerImage = root.querySelector(".image-viewer-image");
 
+  root.querySelector(".image-viewer-close").addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    closeViewer();
+  });
+
   const stage = root.querySelector(".image-viewer-stage");
   stage.addEventListener("click", (event) => {
-    if (event.target === stage || (event.target === viewerImage && viewerScale === 1)) closeViewer();
+    if (viewerScale > 1) return;
+    if (event.target === stage || event.target === viewerImage) closeViewer();
   });
   stage.addEventListener("wheel", (event) => {
     event.preventDefault();
@@ -236,13 +242,11 @@ function openViewer(image) {
   viewer.hidden = false;
   document.documentElement.classList.add("image-viewer-open");
   document.body.classList.add("image-viewer-open");
-  viewer.querySelector(".image-viewer-surface").focus({ preventScroll: true });
-  viewer.requestFullscreen?.()?.catch(() => {});
+  viewer.querySelector(".image-viewer-close").focus({ preventScroll: true });
 }
 
 function closeViewer() {
   if (!viewer || viewer.hidden) return;
-  if (document.fullscreenElement) document.exitFullscreen?.()?.catch(() => {});
   viewer.hidden = true;
   document.documentElement.classList.remove("image-viewer-open");
   document.body.classList.remove("image-viewer-open");
@@ -253,7 +257,7 @@ function closeViewer() {
 galleryImages.forEach((image) => {
   image.tabIndex = 0;
   image.setAttribute("role", "button");
-  image.setAttribute("aria-label", `Open image fullscreen: ${image.alt || "image"}`);
+  image.setAttribute("aria-label", `Expand image: ${image.alt || "image"}`);
   const activate = (event) => {
     if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") return;
     event.preventDefault();

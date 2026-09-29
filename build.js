@@ -1,8 +1,9 @@
 const fs = require("fs");
 const path = require("path");
+const { applyWorks } = require("./content/work");
 
 const site = {
-  name: "Artificial Systems",
+  name: "Luca Miglioli",
   tagline: "Industrial workflows",
   email: "hello@artificialsystems.example",
 };
@@ -50,7 +51,7 @@ const pages = [
     file: "service-local-ai.html",
     title: "Local AI — {{name}}",
     description:
-      "Local AI inside your company: models and document search that stay on hardware you control.",
+      "Keep your data private with self-hosted AI inside your company network. We can assess whether the privacy gains are worth the cost.",
     nav: "services",
     sub: "service-local-ai",
   },
@@ -58,7 +59,7 @@ const pages = [
     file: "service-rockwell.html",
     title: "Rockwell PLC workflows — {{name}}",
     description:
-      "Workflow optimization for Rockwell PLC projects: revisions, downloads, alarms, and the documents around the controller.",
+      "Turn Excel exports from electrical schemas into PLC code ready to import—less manual data entry and fewer errors.",
     nav: "services",
     sub: "service-rockwell",
   },
@@ -96,7 +97,7 @@ const pages = [
     file: "project-avionics.html",
     title: "General aviation head-up displays — {{name}}",
     description:
-      "Everything a pilot needs, in front of his eyes. Off-the-shelf electronics selected for the best user experience.",
+      "Everything a pilot needs, in front of his eyes. GPS speed, heading, altitude and inertial attitude, with flight plans instantly transferred by Bluetooth to the HUD.",
     nav: "projects",
     sub: "project-avionics",
   },
@@ -395,7 +396,7 @@ function build() {
         `data-nav="${key}" aria-current="page"`
       );
     }
-    const body = fs.readFileSync(bodyPath, "utf8");
+    const body = applyWorks(fs.readFileSync(bodyPath, "utf8"));
     let html = shell
       .replace("{{title}}", page.title)
       .replace("{{description}}", page.description)
