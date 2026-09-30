@@ -8,7 +8,7 @@ const works = [
     image: "images/technical-translation-review.webp",
     alt: "Technical translation review with source and translated terms",
     paragraphs: [
-      "Translating big docx manuals is a tedious, expensive and error prone process. Translators often copy paste paragraphs to chatgpt and re-paste them back; this app automates that process (there is a local AI option for privacy).",
+      "Translating big docx manuals is a tedious, expensive and error prone process. Translators often copy paste paragraphs to chatgpt and re-paste them back; this app automates that process while maintaining perfect docx structure (there is a local AI option for privacy).",
       "You can have your company glossary for technical terms and check the results with error detection systems.",
     ],
   },
