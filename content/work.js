@@ -8,9 +8,9 @@ const works = [
     image: "images/technical-translation-review.webp",
     alt: "Technical translation review with source and translated terms",
     paragraphs: [
-      "Translating big docx manuals is a tedious, expensive and error prone process. Translators often copy paste paragraphs to chatgpt and re-paste them back. This app does the copy pasting for you while maintaining the docx structure (tables, paragraphs…), 3000 times a document, for just a few euros per document online or locally if you want more privacy and you don’t mind a bigger upfront cost. You can have your company glossary and check the results with error detection systems.",
+      "Translating big docx manuals is a tedious, expensive and error prone process. Translators often copy paste paragraphs to chatgpt and re-paste them back; this app automates that process (there is a local AI option for privacy).",
+      "You can have your company glossary for technical terms and check the results with error detection systems.",
     ],
-    note: "numbers are based on real 100 page documents tested manually",
   },
   {
     id: "workflows",
@@ -22,9 +22,8 @@ const works = [
     alt: "Custom app for company documents: Word, Excel, PDF, and Eplan",
     photoClass: "photo-interface",
     paragraphs: [
-      "Custom built webapp for repetitive interactions with the company knowledge base.",
-      "Research: What this means is going from the question to answer in seconds, with the links to the exact paragraphs of the documents used to give you the answer. With eplan parsing support.",
-      "Excels: wide support for file modification and analysis.",
+      "Get answers in seconds from private company data, with links to the exact paragraphs of the documents used to give you the answer. Eplan parsing support and local AI are options.",
+      "Wide support for Excel file modification and analysis.",
     ],
   },
   {
@@ -44,12 +43,13 @@ const works = [
     href: "service-excel.html",
     home: true,
     tag: "04 · Excel",
-    title: "Excel to webapp transformation",
-    image: "images/excel-approval-workflow.webp",
-    alt: "Excel workbook connected to an approval application",
+    title: "Complex Excel into web apps that are easy to maintain",
+    image: "images/course-management-webapp.webp",
+    alt: "Training and safety course management web app that replaced a complex spreadsheet",
     photoClass: "photo-interface",
     paragraphs: [
-      "Transform Excel workbooks into applications.",
+      "Adding data is easier. Maintenance is easier. New employees learn the system faster, and errors go down.",
+      "The apps are easy to build and maintain through custom software that includes automatic backups.",
     ],
   },
   {

@@ -75,7 +75,7 @@ const pages = [
     file: "service-excel.html",
     title: "Excel to applications — {{name}}",
     description:
-      "Turn the spreadsheet that became your system of record into an application, and keep an export when a sheet is still needed.",
+      "Turn complex Excel files into web apps that are easy to maintain: simpler data entry, faster training, fewer errors, and automatic backups.",
     nav: "services",
     sub: "service-excel",
   },

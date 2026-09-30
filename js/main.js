@@ -83,8 +83,6 @@ const galleryImages = [...document.querySelectorAll(".photo img")].filter(
   (img) => !img.closest("a") && !img.closest(".work-card")
 );
 
-const workCardMq = window.matchMedia("(max-width: 720px)");
-
 function setWorkCardOpen(card, open) {
   const panel = card.querySelector(".card-expand");
   if (!panel) return;
@@ -101,12 +99,6 @@ function initWorkCards() {
 
   cards.forEach((card) => {
     card.addEventListener("click", () => {
-      if (workCardMq.matches) {
-        const willOpen = !card.classList.contains("is-open");
-        cards.forEach((other) => setWorkCardOpen(other, false));
-        if (willOpen) setWorkCardOpen(card, true);
-        return;
-      }
       const href = card.dataset.href;
       if (href) window.location.assign(href);
     });
